@@ -76,6 +76,10 @@ static void main_window_unload(Window *window) {
 
   // Destroy BitmapLayer
   bitmap_layer_destroy(s_background_layer);
+
+  // Destroy weather elements
+  text_layer_destroy(s_weather_layer);
+  fonts_unload_custom_font(s_weather_font);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
